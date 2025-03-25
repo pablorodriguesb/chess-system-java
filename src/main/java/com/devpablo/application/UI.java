@@ -1,5 +1,6 @@
 package com.devpablo.application;
 
+import com.devpablo.chess.ChessMatch;
 import com.devpablo.chess.ChessPiece;
 import com.devpablo.chess.ChessPosition;
 import com.devpablo.chess.Color;
@@ -45,6 +46,13 @@ public class UI {
         }
     }
 
+    public static void printMatch(ChessMatch chessMatch) {
+        printBoard(chessMatch.getPieces());
+        System.out.println();
+        System.out.println("Turn : " + chessMatch.getTurn());
+        System.out.println("Waiting player: " + chessMatch.getCurrentPlayer());
+    }
+    
     public static void printBoard(ChessPiece[][] pieces) {
         for (int i = 0; i < pieces.length; i++) {
             System.out.print(String.format("%-3d", (8 - i)));
